@@ -1,4 +1,4 @@
-# Credit Card Fraud Detection with Machine Learning
+# Credit Card Fraud Detection
 
 This repository contains a machine learning project focused on detecting credit card fraud using a `RandomForestClassifier`. The model is evaluated using Stratified K-fold cross-validation and is tuned for precision, recall, and F1-score.
 
