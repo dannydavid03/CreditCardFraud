@@ -26,8 +26,7 @@ You can install these dependencies by running:
 
 ````bash
 pip install -r requirements.txt
-
-
+````
 
 In this project I aim to design a model that helps identify Credit Card Fraud
 The dataset has been collected and analysed during a research collaboration of Worldline and the Machine Learning Group (http://mlg.ulb.ac.be) of ULB (Université Libre de Bruxelles) on big data mining and fraud detection.
@@ -40,14 +39,6 @@ import kagglehub
 path = kagglehub.dataset_download("mlg-ulb/creditcardfraud")
 print("Path to dataset files:", path)
 ````
-
-    /Users/danieldavid/Documents/DataProjects/venv/lib/python3.8/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-      from .autonotebook import tqdm as notebook_tqdm
-
-
-    Warning: Looks like you're using an outdated `kagglehub` version, please consider updating (latest version: 0.3.10)
-
-
     Path to dataset files: /Users/danieldavid/.cache/kagglehub/datasets/mlg-ulb/creditcardfraud/versions/3
 
 ## Loading the dataset using pandas
@@ -141,7 +132,7 @@ plt.show()
 
 ```
 
-![png](dataProject_files/dataProject_6_0.png)
+![png](dataProject_6_0.png)
 
 ```python
 # Correlation heatmap of the PCA features
@@ -152,7 +143,7 @@ plt.show()
 
 ```
 
-![png](dataProject_files/dataProject_7_0.png)
+![png](dataProject_7_0.png)
 
 ```python
 # Visualize the transaction amount distribution for fraud vs. non-fraud transactions
@@ -171,7 +162,7 @@ plt.show()
 
       sns.boxplot(x='Class', y='Amount', data=df, palette='Set1')
 
-![png](dataProject_files/dataProject_8_1.png)
+![png](dataProject_8_1.png)
 
 ```python
 # Visualize the time distribution for fraud vs. non-fraud transactions
@@ -190,7 +181,7 @@ plt.show()
 
       sns.boxplot(x='Class', y='Time', data=df, palette='Set1')
 
-![png](dataProject_files/dataProject_9_1.png)
+![png](dataProject_9_1.png)
 
 ## Developing Model to detect Fraud
 
@@ -291,7 +282,7 @@ plt.show()
 
 ```
 
-![png](dataProject_files/dataProject_18_0.png)
+![png](dataProject_18_0.png)
 
 We can see from the confusion matrix that the model demonstrates strong performance in accurately identifying legitimate transactions, as evidenced by the high number of true negatives. However, the model's performance in detecting fraudulent transactions can be further improved, as indicated by the presence of false negatives. Given the severe consequences associated with failing to detect fraudulent activities, minimizing false negatives is of paramount importance.
 
@@ -306,7 +297,7 @@ plt.title('Precision-Recall Curve')
 plt.show()
 ```
 
-![png](dataProject_files/dataProject_20_0.png)
+![png](dataProject_20_0.png)
 
 The Precision-Recall curve shows that the model has high precision at low recall, meaning it's good at correctly identifying fraud when it's very confident. However, precision drops sharply as recall increases, indicating that the model struggles to identify all fraudulent transactions without increasing false positives. This suggests a need to improve the model's ability to detect fraud without generating too many false alarms.
 
@@ -320,7 +311,7 @@ plt.title('F1-score per Fold')
 plt.show()
 ```
 
-![png](dataProject_files/dataProject_22_0.png)
+![png](dataProject_22_0.png)
 
 The F1 score per fold bar chart shows that the credit card fraud detection model achieves consistent and reasonably high F1-scores across different folds in cross-validation. This indicates that the model is robust and performs well in balancing precision and recall acrross folds.
 
@@ -338,7 +329,7 @@ plt.legend(loc='lower right')
 plt.show()
 ```
 
-![png](dataProject_files/dataProject_24_0.png)
+![png](dataProject_24_0.png)
 
 The ROC curve demonstrates that the credit card fraud detection model achieves godd performance, as evidenced by the high AUC of 0.97 and the steep rise in the curve towards the top-left corner. This indicates that the model is highly effective at distinguishing between fraudulent and legitimate transactions, achieving a high true positive rate with a low false positive rate.
 
@@ -356,7 +347,7 @@ plt.title('Feature Importance from RandomForestClassifier')
 plt.show()
 ```
 
-![png](dataProject_files/dataProject_26_0.png)
+![png](dataProject_26_0.png)
 
 The feature importance chart reveals that the Random Forest model relies heavily on a few key features, particularly "V14", for predicting credit card fraud, while not relying too much on parameters like time and amount.
 
